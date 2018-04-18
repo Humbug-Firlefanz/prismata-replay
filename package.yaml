@@ -1,0 +1,49 @@
+name:                prismata
+version:             0.1.0.0
+github:              "Humbug-Firlefanz/prismata"
+license:             BSD3
+author:              "Paul Kmiecik"
+maintainer:          "Paul.Kmiecik@gmail.com"
+copyright:           "MIT"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/Humbug-Firlefanz/prismata#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- happstack-server
+
+library:
+  source-dirs: src
+
+executables:
+  prismata-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - prismata
+
+tests:
+  prismata-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - prismata

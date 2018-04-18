@@ -1,1 +1,1 @@
-# prismata-replay
+# prismata
